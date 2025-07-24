@@ -1,4 +1,4 @@
-import { useInitStep, InitStep } from "./InitStepContext";
+import { useInitStep, InitStep } from "./context/InitStepContext";
 import RestoreStep from "./step/RestoreStep";
 import ConfigStep from "./step/ConfigStep";
 import OSCStep from "./step/OSCStep";

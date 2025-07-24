@@ -2,7 +2,7 @@ import { Box, Button, FileDropZone } from "@greysole/spooder-component-library";
 import { prepareRestoreSettings } from "../Request";
 import { useState } from "react";
 import RestoreSettingsSelection from "./restoreStep/RestoreSettingsSelection";
-import { InitStep, useInitStep } from "../InitStepContext";
+import { InitStep, useInitStep } from "../context/InitStepContext";
 
 export default function RestoreStep() {
   const [backupName, setBackupName] = useState<string>("");

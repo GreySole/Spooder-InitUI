@@ -4,24 +4,27 @@ import {
   Border,
 } from "@greysole/spooder-component-library";
 import UdpClientList from "./UdpClientList";
-import { InitStep, useInitStep } from "../../InitStepContext";
+import { InitStep, useInitStep } from "../../context/InitStepContext";
 import { useCallback, useEffect } from "react";
 import { saveConfig } from "../../Request";
 import { useFormContext } from "react-hook-form";
+import { useInitContext } from "../../context/InitContextProvider";
 
 export default function OSCForm() {
+  const { refetch } = useInitContext();
   const { setCurrentStep, setNextAction, setPrevAction } = useInitStep();
   const { getValues } = useFormContext();
 
   const saveAndContinue = useCallback(() => {
     saveConfig(getValues())
       .then(() => {
+        refetch();
         setCurrentStep(InitStep.HOSTING);
       })
       .catch((error) => {
         console.error("Error saving config:", error);
       });
-  }, [getValues, setCurrentStep]);
+  }, [getValues, setCurrentStep, refetch]);
 
   const gotoPrevStep = useCallback(() => {
     setCurrentStep(InitStep.CONFIG);

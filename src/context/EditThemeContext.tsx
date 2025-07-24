@@ -10,9 +10,9 @@ import {
   SpooderPet,
   ThemeProvider,
 } from "@greysole/spooder-component-library";
-import { getData } from "./Request";
-import { ConfigFile, NetworkInterface } from "./Types";
-import App from "./App";
+import { getData } from "../Request";
+import { ConfigFile, NetworkInterface } from "../Types";
+import App from "../App";
 
 // Create the context
 const InitContext = createContext({

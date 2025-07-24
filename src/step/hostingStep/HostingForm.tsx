@@ -5,24 +5,27 @@ import {
   Box,
 } from "@greysole/spooder-component-library";
 import HostingHandle from "./HostingHandle";
-import { InitStep, useInitStep } from "../../InitStepContext";
+import { InitStep, useInitStep } from "../../context/InitStepContext";
 import { useCallback, useEffect } from "react";
 import { saveConfig } from "../../Request";
 import { useFormContext } from "react-hook-form";
+import { useInitContext } from "../../context/InitContextProvider";
 
 export default function HostingForm() {
+  const { refetch } = useInitContext();
   const { setNextAction, setPrevAction, setCurrentStep } = useInitStep();
   const { getValues } = useFormContext();
 
   const saveAndContinue = useCallback(() => {
     saveConfig(getValues())
       .then(() => {
+        refetch();
         setCurrentStep(InitStep.FINISH);
       })
       .catch((error) => {
         console.error("Error saving config:", error);
       });
-  }, [getValues, setCurrentStep]);
+  }, [getValues, setCurrentStep, refetch]);
 
   const gotoPrevStep = useCallback(() => {
     setCurrentStep(InitStep.OSC);

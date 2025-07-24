@@ -6,7 +6,7 @@ import {
   TypeFace,
   useTheme,
 } from "@greysole/spooder-component-library";
-import { InitStep, useInitStep } from "./InitStepContext";
+import { InitStep, useInitStep } from "./context/InitStepContext";
 import InitStepText from "./InitStepText";
 import InitStepContent from "./InitStepContent";
 

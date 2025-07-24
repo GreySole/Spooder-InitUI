@@ -1,6 +1,6 @@
 import { Box, Button } from "@greysole/spooder-component-library";
-import { useInitStep, InitStep } from "../InitStepContext";
-import { useInitContext } from "../InitContextProvider";
+import { useInitStep, InitStep } from "../context/InitStepContext";
+import { useInitContext } from "../context/InitContextProvider";
 
 export default function ForkStep() {
   const { isFirstTime } = useInitContext();

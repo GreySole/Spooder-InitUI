@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { InitProvider } from "./InitContextProvider";
+import { InitProvider } from "./context/InitContextProvider";
 import "./index.css";
 
 const root = document.getElementById("root") as HTMLElement;

@@ -1,5 +1,5 @@
 import { Button } from "@greysole/spooder-component-library";
-import { useInitStep, InitStep } from "../InitStepContext";
+import { useInitStep, InitStep } from "../context/InitStepContext";
 
 export default function WelcomeStep() {
   const { setCurrentStep } = useInitStep();

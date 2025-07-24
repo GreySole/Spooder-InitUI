@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { useForm, FormProvider } from "react-hook-form";
-import { useInitContext } from "./InitContextProvider";
+import { useInitContext } from "../../context/InitContextProvider";
 
 interface ConfigFormContextProps {
   children: ReactNode;

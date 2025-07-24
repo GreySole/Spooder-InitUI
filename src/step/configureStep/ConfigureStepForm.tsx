@@ -7,24 +7,25 @@ import {
 } from "@greysole/spooder-component-library";
 import { useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
-import { useInitContext } from "../../InitContextProvider";
-import { InitStep, useInitStep } from "../../InitStepContext";
+import { useInitContext } from "../../context/InitContextProvider";
+import { InitStep, useInitStep } from "../../context/InitStepContext";
 import { saveConfig } from "../../Request";
 
 export default function ConfigureStepForm() {
-  const { nets } = useInitContext();
+  const { nets, refetch } = useInitContext();
   const { setCurrentStep, setNextAction, setPrevAction } = useInitStep();
   const { getValues, setValue } = useFormContext();
 
   const saveAndContinue = useCallback(() => {
     saveConfig(getValues())
       .then(() => {
+        refetch();
         setCurrentStep(InitStep.OSC);
       })
       .catch((error) => {
         console.error("Error saving config:", error);
       });
-  }, [getValues, setCurrentStep]);
+  }, [getValues, setCurrentStep, refetch]);
 
   const gotoPrevStep = useCallback(() => {
     setCurrentStep(InitStep.THEME);

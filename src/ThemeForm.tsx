@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@greysole/spooder-component-library";
-import { InitStep, useInitStep } from "./InitStepContext";
+import { InitStep, useInitStep } from "./context/InitStepContext";
 import { saveThemes } from "./Request";
 import ThemeStep from "./step/ThemeStep";
 import { useCallback, useEffect } from "react";

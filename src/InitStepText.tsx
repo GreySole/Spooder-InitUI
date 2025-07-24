@@ -1,5 +1,5 @@
-import { useInitContext } from "./InitContextProvider";
-import { InitStep, useInitStep } from "./InitStepContext";
+import { useInitContext } from "./context/InitContextProvider";
+import { InitStep, useInitStep } from "./context/InitStepContext";
 
 export default function InitStepText() {
   const { currentStep } = useInitStep();

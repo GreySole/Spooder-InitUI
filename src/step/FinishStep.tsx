@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { InitStep, useInitStep } from "../InitStepContext";
+import { InitStep, useInitStep } from "../context/InitStepContext";
 import { Box } from "@greysole/spooder-component-library";
 
 export default function FinishStep() {

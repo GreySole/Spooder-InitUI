@@ -11,8 +11,8 @@ import {
   useTheme,
 } from "@greysole/spooder-component-library";
 import { restoreSettings } from "../../Request";
-import { InitStep, useInitStep } from "../../InitStepContext";
-import { useInitContext } from "../../InitContextProvider";
+import { InitStep, useInitStep } from "../../context/InitStepContext";
+import { useInitContext } from "../../context/InitContextProvider";
 
 interface RestoreSettingsSelectionProps {
   backupName: string;
