@@ -13,9 +13,7 @@ export const ThemeForm = () => {
       webui: {
         ...themeVariables,
       },
-      spooderpet: {
-        ...customSpooder,
-      },
+      spooderpet: [...customSpooder],
     };
 
     await saveThemes(newThemes);

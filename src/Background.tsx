@@ -16,6 +16,9 @@ export default function Background() {
           objectFit: "cover",
           filter: `hue-rotate(${hue}deg) saturate(${saturation})`,
         }}
+        onLoadedData={(e) => {
+          e.currentTarget.playbackRate = 0.5;
+        }}
       >
         <source src="/assets/web.webm" type="video/webm" />
       </video>

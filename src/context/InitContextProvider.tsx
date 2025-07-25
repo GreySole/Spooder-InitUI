@@ -8,7 +8,9 @@ import {
 import {
   CircleLoader,
   SpooderPet,
+  SpooderPetPair,
   ThemeProvider,
+  TooltipProvider,
 } from "@greysole/spooder-component-library";
 import { getData } from "../Request";
 import { ConfigFile, NetworkInterface } from "../Types";
@@ -32,7 +34,7 @@ export function InitProvider() {
     saturation: 1,
     isDarkTheme: true,
   });
-  const [spooder, setSpooder] = useState<SpooderPet | undefined>();
+  const [spooder, setSpooder] = useState<SpooderPetPair[] | undefined>();
   const [config, setConfig] = useState<ConfigFile | undefined>();
   const [nets, setNets] = useState<NetworkInterface[] | undefined>();
   const [isFirstTime, setIsFirstTime] = useState<boolean>(true);
@@ -53,7 +55,7 @@ export function InitProvider() {
             });
           }
 
-          setSpooder(data.themes.spooderpet as SpooderPet);
+          setSpooder(data.themes.spooderpet);
           setConfig(data.config as ConfigFile);
           res();
         })
@@ -76,9 +78,11 @@ export function InitProvider() {
     <InitContext.Provider
       value={{ theme, setTheme, config, setConfig, nets, refetch, isFirstTime }}
     >
-      <ThemeProvider theme={theme} spooder={spooder}>
-        <App />
-      </ThemeProvider>
+      <TooltipProvider>
+        <ThemeProvider theme={theme} spooder={spooder}>
+          <App />
+        </ThemeProvider>
+      </TooltipProvider>
     </InitContext.Provider>
   );
 }

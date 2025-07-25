@@ -6,9 +6,8 @@ import {
   BoolSwitch,
   useTheme,
   Border,
-  EditCustomSpooder,
 } from "@greysole/spooder-component-library";
-import EditCustomSpooderFormProvider from "../customSpooderInput/EditCustomSpooderFormProvider";
+import EditCustomSpooder from "../customSpooderInput/EditCustomSpooder";
 
 export default function ThemeStep() {
   const {
@@ -17,8 +16,9 @@ export default function ThemeStep() {
     setThemeHue,
     setThemeMode,
     setThemeSaturation,
-    customSpooder,
   } = useTheme();
+
+  console.log("Theme Variables:", themeVariables);
 
   return (
     <Box width="100%" padding="small" justifyContent="center">
@@ -50,15 +50,13 @@ export default function ThemeStep() {
             setThemeMode(!themeVariables.isDarkTheme);
           }}
         />
-        <EditCustomSpooderFormProvider data={customSpooder}>
-          <Box width="100%" height="40dvh" padding="none">
-            <Border>
-              <Box width="100%" height="100%" padding="medium" overflow="auto">
-                <EditCustomSpooder formKey="" />
-              </Box>
-            </Border>
-          </Box>
-        </EditCustomSpooderFormProvider>
+        <Box width="100%" height="40dvh" padding="none">
+          <Border>
+            <Box width="100%" height="100%" padding="medium">
+              <EditCustomSpooder />
+            </Box>
+          </Border>
+        </Box>
       </Stack>
     </Box>
   );

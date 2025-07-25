@@ -8,8 +8,9 @@ export default function RestoreStep() {
   const [backupName, setBackupName] = useState<string>("");
   const [backupSelections, setBackupSelections] = useState<string[]>([]);
   const { setCurrentStep } = useInitStep();
-  const handleFile = (file: File) => {
+  const handleFile = (files: FileList) => {
     // Handle the file here
+    const file = files[0];
     console.log("File dropped:", file);
     prepareRestoreSettings(file).then((data) => {
       console.log("RESTORE SETTINGS", data);

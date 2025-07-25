@@ -2,19 +2,19 @@ import { KeyedObject } from "@greysole/spooder-component-library";
 import { NetworkInterface } from "./Types";
 import { FieldValues } from "react-hook-form";
 
-export interface InitData{
-    nets: NetworkInterface[];
-    themes: KeyedObject;
-    config: KeyedObject;
+export interface InitData {
+  nets: NetworkInterface[];
+  themes: KeyedObject;
+  config: KeyedObject;
 }
 
-export function prepareRestoreSettings(file:File){
+export function prepareRestoreSettings(file: File) {
   const formData = new FormData();
   formData.append("file", file);
   return new Promise<KeyedObject>((res, rej) => {
     fetch("/prepare_restore_settings", {
       method: "POST",
-      body:formData
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -26,7 +26,7 @@ export function prepareRestoreSettings(file:File){
   });
 }
 
-export function restoreSettings(backupName:string, selections:string[]){
+export function restoreSettings(backupName: string, selections: string[]) {
   return new Promise<KeyedObject>((res, rej) => {
     fetch("/restore_settings", {
       method: "POST",
@@ -56,10 +56,11 @@ export function getData() {
       },
     })
       .then((response) => response.json())
-      .then((data:InitData) => {
+      .then((data: InitData) => {
         console.log("GOT DATA", data);
         res(data);
-      }).catch((e) => {
+      })
+      .catch((e) => {
         console.error("ERROR", e);
         rej(e);
       });
