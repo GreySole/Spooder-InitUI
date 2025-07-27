@@ -43,12 +43,7 @@ export default function InitStepText() {
     case InitStep.HOSTING:
       return <span>Host your Spooder on the Internet!</span>;
     case InitStep.FINISH:
-      return (
-        <span>
-          You're all set! Restart your Spooder and then refresh this page to
-          access the WebUI.
-        </span>
-      );
+      return <span>You're all set!</span>;
     default:
       return null;
   }

@@ -47,14 +47,19 @@ export const InitStepProvider: React.FC<InitStepProviderProps> = ({
   );
   const [nextAction, setNextAction] = useState<() => void>(() => () => {});
   const [prevAction, setPrevAction] = useState<() => void>(() => () => {});
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   useEffect(() => {
-    if (isFirstTime) {
-      setCurrentStep(InitStep.WELCOME);
-    } else {
-      setCurrentStep(InitStep.FORK);
+    // Only set the initial step once, don't reset it when isFirstTime changes during the flow
+    if (!hasInitialized) {
+      if (isFirstTime) {
+        setCurrentStep(InitStep.WELCOME);
+      } else {
+        setCurrentStep(InitStep.FORK);
+      }
+      setHasInitialized(true);
     }
-  }, [isFirstTime]);
+  }, [isFirstTime, hasInitialized]);
 
   return (
     <InitStepContext.Provider

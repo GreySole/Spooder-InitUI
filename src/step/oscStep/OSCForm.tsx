@@ -41,10 +41,6 @@ export default function OSCForm() {
         label="OSC UDP Port"
         formKey="network.osc.osc_udp_port"
       />
-      <FormNumberInput
-        label="OSC TCP Port"
-        formKey="network.osc.osc_tcp_port"
-      />
       <Border>
         <UdpClientList />
       </Border>

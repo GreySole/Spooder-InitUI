@@ -34,7 +34,7 @@ export default function UdpClientList() {
         <Box height="15dvh" overflow="auto">
           <Stack spacing="medium" padding="medium">
             {Object.keys(udpClients).map((key) => (
-              <UdpClient keyName={key} />
+              <UdpClient key={key} keyName={key} />
             ))}
           </Stack>
         </Box>

@@ -106,3 +106,23 @@ export function saveThemes(themes: FieldValues) {
       });
   });
 }
+
+export function finishInit() {
+  return new Promise<KeyedObject>((res, rej) => {
+    fetch("/finish_init", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        res(data);
+      })
+      .catch((e) => {
+        console.error("Error finishing init:", e);
+        rej(e);
+      });
+  });
+}
