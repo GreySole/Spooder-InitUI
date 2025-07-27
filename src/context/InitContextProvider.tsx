@@ -10,6 +10,7 @@ import {
   SpooderPet,
   SpooderPetPair,
   ThemeProvider,
+  ToastProvider,
   TooltipProvider,
 } from "@greysole/spooder-component-library";
 import { getData } from "../Request";
@@ -18,7 +19,14 @@ import App from "../App";
 
 // Create the context
 const InitContext = createContext({
-  theme: { hue: 0, saturation: 0, isDarkTheme: true },
+  theme: {
+    hue: 0,
+    saturation: 0,
+    isDarkTheme: true,
+    isMonospacedFont: false,
+    fontWeight: 500,
+    letterSpacing: 0,
+  },
   setTheme: (theme: any) => {},
   config: {} as ConfigFile,
   setConfig: (config: ConfigFile) => {},
@@ -33,6 +41,9 @@ export function InitProvider() {
     hue: 0.5,
     saturation: 1,
     isDarkTheme: true,
+    isMonospacedFont: false,
+    fontWeight: 500,
+    letterSpacing: 0,
   });
   const [spooder, setSpooder] = useState<SpooderPetPair[] | undefined>();
   const [config, setConfig] = useState<ConfigFile | undefined>();
@@ -47,11 +58,17 @@ export function InitProvider() {
             const newHue = data.themes.webui?.hue;
             const newSaturation = data.themes.webui?.saturation;
             const newIsDarkTheme = data.themes.webui?.isDarkTheme;
+            const newIsMonospacedFont = data.themes.webui?.isMonospacedFont;
+            const newFontWeight = data.themes.webui?.fontWeight;
+            const newLetterSpacing = data.themes.webui?.letterSpacing;
             setIsFirstTime(false);
             setTheme({
               hue: newHue ?? 0.5,
               saturation: newSaturation ?? 1,
               isDarkTheme: newIsDarkTheme ?? true,
+              isMonospacedFont: newIsMonospacedFont ?? false,
+              fontWeight: newFontWeight ?? 500,
+              letterSpacing: newLetterSpacing ?? 0,
             });
           }
 
@@ -79,9 +96,11 @@ export function InitProvider() {
       value={{ theme, setTheme, config, setConfig, nets, refetch, isFirstTime }}
     >
       <TooltipProvider>
-        <ThemeProvider theme={theme} spooder={spooder}>
-          <App />
-        </ThemeProvider>
+        <ToastProvider>
+          <ThemeProvider theme={theme} spooder={spooder}>
+            <App />
+          </ThemeProvider>
+        </ToastProvider>
       </TooltipProvider>
     </InitContext.Provider>
   );

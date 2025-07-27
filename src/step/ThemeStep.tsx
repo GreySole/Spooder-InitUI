@@ -22,7 +22,7 @@ export default function ThemeStep() {
 
   return (
     <Box width="100%" padding="small" justifyContent="center">
-      <Stack align="center" width="100%" spacing="xlarge" padding="medium">
+      <Stack align="center" width="100%" spacing="large" padding="medium">
         <Slider
           orientation={"horizontal"}
           gradient={
@@ -50,7 +50,7 @@ export default function ThemeStep() {
             setThemeMode(!themeVariables.isDarkTheme);
           }}
         />
-        <Box width="100%" height="40dvh" padding="none">
+        <Box width="100%" height="50dvh" padding="none">
           <Border>
             <Box width="100%" height="100%" padding="medium">
               <EditCustomSpooder />

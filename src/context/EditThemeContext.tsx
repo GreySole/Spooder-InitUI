@@ -32,6 +32,9 @@ export function InitProvider() {
     hue: 0.5,
     saturation: 1,
     isDarkTheme: true,
+    isMonospacedFont: false,
+    fontWeight: 500,
+    letterSpacing: 0,
   });
   const [spooder, setSpooder] = useState<SpooderPetPair[] | undefined>();
   const [config, setConfig] = useState<ConfigFile | undefined>();
@@ -46,11 +49,17 @@ export function InitProvider() {
             const newHue = data.themes.webui?.hue;
             const newSaturation = data.themes.webui?.saturation;
             const newIsDarkTheme = data.themes.webui?.isDarkTheme;
+            const newIsMonospacedFont = data.themes.webui?.isMonospacedFont;
+            const newFontWeight = data.themes.webui?.fontWeight;
+            const newLetterSpacing = data.themes.webui?.letterSpacing;
             setIsFirstTime(false);
             setTheme({
               hue: newHue ?? 0.5,
               saturation: newSaturation ?? 1,
               isDarkTheme: newIsDarkTheme ?? true,
+              isMonospacedFont: newIsMonospacedFont ?? false,
+              fontWeight: newFontWeight ?? 500,
+              letterSpacing: newLetterSpacing ?? 0,
             });
           }
 

@@ -16,6 +16,7 @@ import {
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import DragHandleButton from "../dragAndDrop/DragHandleButton";
 import { DragHandleProps } from "../dragAndDrop/SortableItem";
+import { useSortable } from "@dnd-kit/sortable";
 
 interface EditCustomSpooderInputPairProps {
   customSpooder: SpooderPetPair[];

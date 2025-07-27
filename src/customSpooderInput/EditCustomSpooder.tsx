@@ -26,8 +26,8 @@ import {
   TextInput,
 } from "@greysole/spooder-component-library";
 import EditCustomSpooderInputPair from "./EditCustomSpooderInputPair";
-import SortableItem from "../../../common/dragAndDrop/SortableItem";
 import { set } from "react-hook-form";
+import SortableItem from "./SortableItem";
 
 export default function EditCustomSpooder() {
   const {
@@ -160,12 +160,7 @@ export default function EditCustomSpooder() {
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <Grid
-          columns={"repeat(auto-fill, 130px)"}
-          width="100%"
-          spacing="small"
-          overflow="visible"
-        >
+        <Box width="100%" flexFlow="row wrap" spacing="small" overflow="auto">
           <SortableContext items={spooderParts} strategy={rectSortingStrategy}>
             {spooderParts.map((id, i) => (
               <SortableItem
@@ -183,7 +178,7 @@ export default function EditCustomSpooder() {
               </SortableItem>
             ))}
           </SortableContext>
-        </Grid>
+        </Box>
       </DndContext>
     </Stack>
   );
