@@ -6,7 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@greysole/spooder-component-library": "file:.yalc/@greysole/spooder-component-library",
+    "@greysole/spooder-component-library": "^0.1.443",
     "@pixi-essentials/svg": "^3.0.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
