@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Stack,
@@ -6,6 +6,9 @@ import {
   BoolSwitch,
   useTheme,
   Border,
+  ButtonRow,
+  Columns,
+  Button,
 } from "@greysole/spooder-component-library";
 import EditCustomSpooder from "../customSpooderInput/EditCustomSpooder";
 
@@ -18,46 +21,65 @@ export default function ThemeStep() {
     setThemeSaturation,
   } = useTheme();
 
+  const [tab, setTab] = useState("theme");
+
   console.log("Theme Variables:", themeVariables);
 
   return (
-    <Box width="100%" padding="small" justifyContent="center">
-      <Stack align="center" width="100%" spacing="large" padding="medium">
-        <Slider
-          orientation={"horizontal"}
-          gradient={
-            "#FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000"
+    <Box width="100%" flexFlow="column" padding="small" alignItems="center">
+      <Columns spacing="none" marginBottom="small">
+        <Button
+          className="plugin-button start"
+          label="Theme"
+          onClick={() => setTab("theme")}
+          color={
+            tab === "theme" ? themeColors.darkColorAnalogousCCW : undefined
           }
-          value={themeVariables.hue}
-          step={0.01}
-          onChange={(value) => {
-            setThemeHue(value);
-          }}
         />
-        <Slider
-          orientation={"horizontal"}
-          gradient={`#FFFFFF, ${themeColors.baseColor}`}
-          value={themeVariables.saturation}
-          step={0.01}
-          onChange={(value) => {
-            setThemeSaturation(value);
-          }}
+        <Button
+          className="plugin-button end"
+          label="Spooder"
+          onClick={() => setTab("spooder")}
+          color={
+            tab === "spooder" ? themeColors.darkColorAnalogousCCW : undefined
+          }
         />
-        <BoolSwitch
-          label="Dark Theme"
-          value={themeVariables.isDarkTheme}
-          onChange={() => {
-            setThemeMode(!themeVariables.isDarkTheme);
-          }}
-        />
-        <Box width="100%" height="50dvh" padding="none">
-          <Border>
-            <Box width="100%" height="100%" padding="medium">
-              <EditCustomSpooder />
-            </Box>
-          </Border>
+      </Columns>
+      {tab === "theme" ? (
+        <Stack align="center" width="100%" spacing="large" padding="medium">
+          <Slider
+            orientation={"horizontal"}
+            gradient={
+              "#FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000"
+            }
+            value={themeVariables.hue}
+            step={0.01}
+            onChange={(value) => {
+              setThemeHue(value);
+            }}
+          />
+          <Slider
+            orientation={"horizontal"}
+            gradient={`#FFFFFF, ${themeColors.baseColor}`}
+            value={themeVariables.saturation}
+            step={0.01}
+            onChange={(value) => {
+              setThemeSaturation(value);
+            }}
+          />
+          <BoolSwitch
+            label="Dark Theme"
+            value={themeVariables.isDarkTheme}
+            onChange={() => {
+              setThemeMode(!themeVariables.isDarkTheme);
+            }}
+          />
+        </Stack>
+      ) : (
+        <Box width="inherit" height="60dvh" padding="medium">
+          <EditCustomSpooder />
         </Box>
-      </Stack>
+      )}
     </Box>
   );
 }

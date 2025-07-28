@@ -24,3 +24,11 @@ body {
 .content {
   border: 2px solid var(--button-border-color);
 }
+
+.plugin-button.start {
+  border-radius: 10px 0 0 10px;
+}
+
+.plugin-button.end {
+  border-radius: 0 10px 10px 0;
+}

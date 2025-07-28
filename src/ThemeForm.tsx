@@ -29,9 +29,5 @@ export const ThemeForm = () => {
     setPrevAction(() => () => gotoNextStep());
   }, [setNextAction, setPrevAction, gotoNextStep, onClick]);
 
-  return (
-    <Box flexFlow="column" width="100%">
-      <ThemeStep />
-    </Box>
-  );
+  return <ThemeStep />;
 };

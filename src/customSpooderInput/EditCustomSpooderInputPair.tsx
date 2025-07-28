@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Stack,
-  Columns,
   Box,
   TypeFace,
   SpooderPetPair,
@@ -13,10 +12,10 @@ import {
   StyleSize,
   useToast,
 } from "@greysole/spooder-component-library";
+import { useSortable } from "@dnd-kit/sortable";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import DragHandleButton from "../dragAndDrop/DragHandleButton";
 import { DragHandleProps } from "../dragAndDrop/SortableItem";
-import { useSortable } from "@dnd-kit/sortable";
 
 interface EditCustomSpooderInputPairProps {
   customSpooder: SpooderPetPair[];

@@ -1,4 +1,4 @@
-import React, { Key, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DndContext,
   closestCenter,
@@ -12,12 +12,9 @@ import {
   sortableKeyboardCoordinates,
   defaultAnimateLayoutChanges,
   rectSortingStrategy,
-  useSortable,
 } from "@dnd-kit/sortable";
 import {
   useTheme,
-  Grid,
-  TypeFace,
   BoolSwitch,
   Box,
   Stack,
@@ -26,8 +23,7 @@ import {
   TextInput,
 } from "@greysole/spooder-component-library";
 import EditCustomSpooderInputPair from "./EditCustomSpooderInputPair";
-import { set } from "react-hook-form";
-import SortableItem from "./SortableItem";
+import SortableItem from "../dragAndDrop/SortableItem";
 
 export default function EditCustomSpooder() {
   const {
@@ -100,7 +96,6 @@ export default function EditCustomSpooder() {
 
   return (
     <Stack spacing="medium" width="100%">
-      <TypeFace fontSize="large">Custom Spooder</TypeFace>
       <BoolSwitch
         label="Use Monospaced Font"
         value={themeVariables.isMonospacedFont}
@@ -160,7 +155,13 @@ export default function EditCustomSpooder() {
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <Box width="100%" flexFlow="row wrap" spacing="small" overflow="auto">
+        <Box
+          flexFlow="row wrap"
+          width="100%"
+          height="100%"
+          overflow="auto"
+          spacing="small"
+        >
           <SortableContext items={spooderParts} strategy={rectSortingStrategy}>
             {spooderParts.map((id, i) => (
               <SortableItem
