@@ -6,8 +6,6 @@ import {
   useCallback,
 } from "react";
 import {
-  CircleLoader,
-  SpooderPet,
   SpooderPetPair,
   ThemeProvider,
   ToastProvider,
