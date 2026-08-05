@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { InitStep, useInitStep } from "../context/InitStepContext";
-import { Box, TypeFace } from "@greysole/spooder-component-library";
+import { Box, TypeFace } from "@spooder/webui-component-library";
 import { finishInit } from "../Request";
 import { useInitContext } from "../context/InitContextProvider";
 
@@ -13,7 +13,7 @@ export default function FinishStep() {
 	const [statusText, setStatusText] = useState("");
 	const [statusCountDown, setStatusCountDown] = useState(5);
 
-	const countDownRef = useRef<NodeJS.Timeout | null>(null);
+	const countDownRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
 	useEffect(() => {
 		console.log(config.network.host_port);

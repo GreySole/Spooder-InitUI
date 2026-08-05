@@ -9,7 +9,7 @@ import {
   Stack,
   TypeFace,
   useTheme,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import { restoreSettings } from "../../Request";
 import { InitStep, useInitStep } from "../../context/InitStepContext";
 import { useInitContext } from "../../context/InitContextProvider";

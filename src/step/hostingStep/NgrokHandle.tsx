@@ -2,7 +2,7 @@ import {
   FormTextInput,
   Stack,
   TypeFace,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 
 export default function NgrokHandle() {
   return (

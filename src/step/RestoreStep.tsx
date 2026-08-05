@@ -1,4 +1,4 @@
-import { Box, Button, FileDropZone } from "@greysole/spooder-component-library";
+import { Box, Button, FileDropZone } from "@spooder/webui-component-library";
 import { prepareRestoreSettings } from "../Request";
 import { useState } from "react";
 import RestoreSettingsSelection from "./restoreStep/RestoreSettingsSelection";

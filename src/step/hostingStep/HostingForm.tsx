@@ -3,7 +3,7 @@ import {
   TypeFace,
   FormSelectDropdown,
   Box,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import HostingHandle from "./HostingHandle";
 import { InitStep, useInitStep } from "../../context/InitStepContext";
 import { useCallback, useEffect } from "react";

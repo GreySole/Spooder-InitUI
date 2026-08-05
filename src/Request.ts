@@ -1,4 +1,4 @@
-import { KeyedObject } from "@greysole/spooder-component-library";
+import { KeyedObject } from "@spooder/webui-component-library";
 import { NetworkInterface } from "./Types";
 import { FieldValues } from "react-hook-form";
 

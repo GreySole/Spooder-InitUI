@@ -1,4 +1,4 @@
-import { Box, useTheme } from "@greysole/spooder-component-library";
+import { Box, useTheme } from "@spooder/webui-component-library";
 import { InitStep, useInitStep } from "./context/InitStepContext";
 import { saveThemes } from "./Request";
 import ThemeStep from "./step/ThemeStep";

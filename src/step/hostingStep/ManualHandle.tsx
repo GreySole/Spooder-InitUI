@@ -2,7 +2,7 @@ import {
   Stack,
   TypeFace,
   FormTextInput,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 
 export default function ManualHandle() {
   return (

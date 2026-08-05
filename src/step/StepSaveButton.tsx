@@ -1,5 +1,5 @@
 import { FieldValues, useFormContext } from "react-hook-form";
-import { Button, KeyedObject } from "@greysole/spooder-component-library";
+import { Button, KeyedObject } from "@spooder/webui-component-library";
 
 interface StepSaveButtonProps {
   saveFunction: (values: FieldValues) => Promise<KeyedObject>;

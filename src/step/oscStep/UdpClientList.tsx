@@ -6,7 +6,7 @@ import {
   Stack,
   TextInput,
   TypeFace,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import UdpClient from "./UdpClient";
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";

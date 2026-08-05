@@ -1,4 +1,4 @@
-import { Box } from "@greysole/spooder-component-library";
+import { Box } from "@spooder/webui-component-library";
 import { ConfigFormContext } from "./configureStep/ConfigFormContext";
 import ConfigureStepForm from "./configureStep/ConfigureStepForm";
 

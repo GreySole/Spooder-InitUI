@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { InitProvider } from "./context/InitContextProvider";
 import "./index.css";
 
-const root = document.getElementById("root") as HTMLElement;
+const root = document.getElementById("app") as HTMLElement;
 if (!root) {
   throw new Error("Root element not found");
 }

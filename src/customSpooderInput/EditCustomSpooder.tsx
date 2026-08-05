@@ -21,7 +21,7 @@ import {
   Columns,
   Slider,
   TextInput,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import EditCustomSpooderInputPair from "./EditCustomSpooderInputPair";
 import SortableItem from "../dragAndDrop/SortableItem";
 

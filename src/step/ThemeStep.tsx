@@ -9,7 +9,7 @@ import {
   ButtonRow,
   Columns,
   Button,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import EditCustomSpooder from "../customSpooderInput/EditCustomSpooder";
 
 export default function ThemeStep() {

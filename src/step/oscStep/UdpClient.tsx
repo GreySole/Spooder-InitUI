@@ -3,7 +3,7 @@ import {
   Button,
   Columns,
   TypeFace,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import { useFormContext } from "react-hook-form";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 

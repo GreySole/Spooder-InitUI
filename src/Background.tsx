@@ -1,4 +1,4 @@
-import { Box, useTheme } from "@greysole/spooder-component-library";
+import { Box, useTheme } from "@spooder/webui-component-library";
 
 export default function Background() {
   const { themeVariables } = useTheme();

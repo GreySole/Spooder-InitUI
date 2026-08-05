@@ -2,7 +2,7 @@ import {
   Stack,
   FormNumberInput,
   Border,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import UdpClientList from "./UdpClientList";
 import { InitStep, useInitStep } from "../../context/InitStepContext";
 import { useCallback, useEffect } from "react";

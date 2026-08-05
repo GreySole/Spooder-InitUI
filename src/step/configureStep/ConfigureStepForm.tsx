@@ -4,7 +4,7 @@ import {
   TypeFace,
   FormSelectDropdown,
   FormNumberInput,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import { useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useInitContext } from "../../context/InitContextProvider";

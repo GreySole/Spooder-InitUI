@@ -11,7 +11,7 @@ import {
   useTheme,
   StyleSize,
   useToast,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import { useSortable } from "@dnd-kit/sortable";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import DragHandleButton from "../dragAndDrop/DragHandleButton";

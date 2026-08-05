@@ -10,7 +10,7 @@ import {
   SpooderPet,
   SpooderPetPair,
   ThemeProvider,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import { getData } from "../Request";
 import { ConfigFile, NetworkInterface } from "../Types";
 import App from "../App";

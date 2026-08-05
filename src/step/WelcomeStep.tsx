@@ -1,4 +1,4 @@
-import { Button } from "@greysole/spooder-component-library";
+import { Button } from "@spooder/webui-component-library";
 import { useInitStep, InitStep } from "../context/InitStepContext";
 
 export default function WelcomeStep() {

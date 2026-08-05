@@ -5,7 +5,7 @@ import {
   Pagination,
   TypeFace,
   useTheme,
-} from "@greysole/spooder-component-library";
+} from "@spooder/webui-component-library";
 import { InitStep, useInitStep } from "./context/InitStepContext";
 import InitStepText from "./InitStepText";
 import InitStepContent from "./InitStepContent";

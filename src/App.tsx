@@ -1,4 +1,4 @@
-import { Box } from "@greysole/spooder-component-library";
+import { Box } from "@spooder/webui-component-library";
 import Background from "./Background";
 import { InitStepProvider } from "./context/InitStepContext";
 import InitSteps from "./InitSteps";
