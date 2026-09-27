@@ -1,6 +1,6 @@
 {
   "name": "spooder-initui",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "private": true,
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
@@ -8,7 +8,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@spooder/webui-component-library": "^0.2.0",
     "@pixi-essentials/svg": "^3.0.0",
     "react": "^18.2.0",
